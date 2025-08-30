@@ -16,6 +16,7 @@ import {
   CheckCircle,
   AlertTriangle
 } from "lucide-react";
+import React, { useRef, useState } from "react";
 
 const Community = () => {
   const reports = [
@@ -81,6 +82,54 @@ const Community = () => {
     }
   };
 
+  // Add state for form fields and success message
+  const [title, setTitle] = useState("");
+  const [location, setLocation] = useState("");
+  const [description, setDescription] = useState("");
+  const [uploadedFiles, setUploadedFiles] = useState<string[]>([]);
+  const [successMsg, setSuccessMsg] = useState("");
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleBrowseClick = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files && files.length > 0) {
+      const fileNames = Array.from(files).map(file => file.name);
+      setUploadedFiles(fileNames);
+    }
+  };
+
+  // Handle form submit
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // ...submit logic here...
+    setTitle("");
+    setLocation("");
+    setDescription("");
+    setUploadedFiles([]);
+    if (fileInputRef.current) fileInputRef.current.value = "";
+    setSuccessMsg("Report submitted successfully!");
+    setTimeout(() => setSuccessMsg(""), 3000); // Hide after 3 seconds
+  };
+
+  // Add modal state
+  const [leaderboardOpen, setLeaderboardOpen] = useState(false);
+
+  // Example: full leaderboard data
+  const fullLeaderboard = [
+    ...topReporters,
+    { name: "Priya Patel", reports: 22, points: 160, badge: "Bronze" },
+    { name: "John Lee", reports: 18, points: 120, badge: "Bronze" },
+    { name: "Amit Singh", reports: 15, points: 100, badge: "Bronze" },
+    // Add more as needed
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -109,51 +158,84 @@ const Community = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="space-y-4">
-                <Input 
-                  placeholder="Report title (e.g., 'High waves at North Beach')" 
-                  className="text-lg"
-                />
-                
-                <div className="flex gap-4">
-                  <div className="flex-1">
-                    <Input 
-                      placeholder="Location" 
-                      className="w-full"
+              <form onSubmit={handleSubmit}>
+                <div className="space-y-4">
+                  <Input 
+                    placeholder="Report title (e.g., 'High waves at North Beach')" 
+                    className="text-lg"
+                    value={title}
+                    onChange={e => setTitle(e.target.value)}
+                  />
+                  
+                  <div className="flex gap-4">
+                    <div className="flex-1">
+                      <Input 
+                        placeholder="Location" 
+                        className="w-full"
+                        value={location}
+                        onChange={e => setLocation(e.target.value)}
+                      />
+                    </div>
+                    <Button variant="wave" size="icon" type="button">
+                      <MapPin className="h-4 w-4" />
+                    </Button>
+                  </div>
+
+                  <Textarea 
+                    placeholder="Describe what you're observing... (weather conditions, water levels, erosion, etc.)"
+                    rows={4}
+                    value={description}
+                    onChange={e => setDescription(e.target.value)}
+                  />
+
+                  <div className="flex items-center justify-between p-4 border border-dashed border-border rounded-lg">
+                    <div className="flex items-center gap-3">
+                      <Camera className="h-6 w-6 text-muted-foreground" />
+                      <div>
+                        <p className="font-medium">Add Photos</p>
+                        <p className="text-sm text-muted-foreground">Drag & drop or click to upload</p>
+                      </div>
+                    </div>
+                    <Button variant="secondary" type="button" onClick={handleBrowseClick}>Browse Files</Button>
+                    <input
+                      type="file"
+                      multiple
+                      ref={fileInputRef}
+                      style={{ display: "none" }}
+                      onChange={handleFileChange}
                     />
                   </div>
-                  <Button variant="wave" size="icon">
-                    <MapPin className="h-4 w-4" />
-                  </Button>
-                </div>
-
-                <Textarea 
-                  placeholder="Describe what you're observing... (weather conditions, water levels, erosion, etc.)"
-                  rows={4}
-                />
-
-                <div className="flex items-center justify-between p-4 border border-dashed border-border rounded-lg">
-                  <div className="flex items-center gap-3">
-                    <Camera className="h-6 w-6 text-muted-foreground" />
-                    <div>
-                      <p className="font-medium">Add Photos</p>
-                      <p className="text-sm text-muted-foreground">Drag & drop or click to upload</p>
+                  {/* Show uploaded file names */}
+                  {uploadedFiles.length > 0 && (
+                    <div className="mt-2 text-sm text-muted-foreground">
+                      <span className="font-medium">Uploaded:</span>
+                      <ul className="list-disc ml-5">
+                        {uploadedFiles.map((name, idx) => (
+                          <li key={idx}>{name}</li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
-                  <Button variant="secondary">Browse Files</Button>
-                </div>
+                  )}
 
-                <div className="flex justify-between items-center pt-4">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-success" />
-                    <span className="text-sm text-muted-foreground">GPS location will be automatically added</span>
+                  <div className="flex justify-between items-center pt-4">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-success" />
+                      <span className="text-sm text-muted-foreground">GPS location will be automatically added</span>
+                    </div>
+                    <Button variant="hero">
+                      <Send className="h-4 w-4 mr-2" />
+                      Submit Report
+                    </Button>
                   </div>
-                  <Button variant="hero">
-                    <Send className="h-4 w-4 mr-2" />
-                    Submit Report
-                  </Button>
                 </div>
-              </div>
+              </form>
+
+              {/* Success message */}
+              {successMsg && (
+                <div className="mt-4 p-3 rounded-lg bg-success/10 text-success">
+                  {successMsg}
+                </div>
+              )}
             </CardContent>
           </Card>
 
@@ -181,7 +263,7 @@ const Community = () => {
               ))}
               
               <div className="pt-4 border-t">
-                <Button variant="wave" className="w-full">
+                <Button variant="wave" className="w-full" onClick={() => setLeaderboardOpen(true)}>
                   <Star className="h-4 w-4 mr-2" />
                   View Full Leaderboard
                 </Button>
@@ -307,6 +389,37 @@ const Community = () => {
             </CardContent>
           </Card>
         </div>
+
+        {/* Leaderboard Modal */}
+        {leaderboardOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+            <div className="bg-white rounded-lg p-6 shadow-lg w-full max-w-lg">
+              <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+                <Trophy className="h-5 w-5 text-yellow-500" />
+                Full Leaderboard
+              </h2>
+              <div className="space-y-3 max-h-[400px] overflow-y-auto">
+                {fullLeaderboard.map((reporter, idx) => (
+                  <div key={idx} className="flex items-center gap-3 p-2 rounded hover:bg-accent/5">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-bold">
+                      {idx + 1}
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-medium">{reporter.name}</p>
+                      <p className="text-xs text-muted-foreground">{reporter.reports} reports • {reporter.points} points</p>
+                    </div>
+                    <div className={`w-6 h-6 rounded-full ${getBadgeColor(reporter.badge)}`} />
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-end mt-4">
+                <Button variant="secondary" onClick={() => setLeaderboardOpen(false)}>
+                  Close
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
