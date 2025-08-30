@@ -1,11 +1,34 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 import { Waves, AlertTriangle, Map, Users, Home, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { toast } = useToast();
+
+  const handleReportIssue = () => {
+    toast({
+      title: "Report Issue",
+      description: "Redirecting to community reporting page...",
+    });
+    // Small delay for user feedback then redirect
+    setTimeout(() => {
+      window.location.href = "/community";
+    }, 1000);
+  };
+
+  const handleEmergencyAlert = () => {
+    toast({
+      title: "🚨 Emergency Alert Activated",
+      description: "Emergency services have been notified. Please follow local evacuation procedures.",
+      variant: "destructive",
+    });
+    // In a real app, this would trigger emergency protocols
+    console.log("EMERGENCY ALERT TRIGGERED - Notifying authorities...");
+  };
 
   const navigation = [
     { name: "Home", href: "/", icon: Home },
@@ -56,10 +79,10 @@ const Header = () => {
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="wave" size="sm">
+            <Button variant="wave" size="sm" onClick={handleReportIssue}>
               Report Issue
             </Button>
-            <Button variant="hero" size="sm">
+            <Button variant="hero" size="sm" onClick={handleEmergencyAlert}>
               Emergency Alert
             </Button>
           </div>
@@ -95,10 +118,10 @@ const Header = () => {
                 </Link>
               ))}
               <div className="pt-4 space-y-2">
-                <Button variant="wave" className="w-full">
+                <Button variant="wave" className="w-full" onClick={handleReportIssue}>
                   Report Issue
                 </Button>
-                <Button variant="hero" className="w-full">
+                <Button variant="hero" className="w-full" onClick={handleEmergencyAlert}>
                   Emergency Alert
                 </Button>
               </div>
