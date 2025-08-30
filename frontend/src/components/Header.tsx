@@ -36,6 +36,7 @@ const Header = () => {
     { name: "Alerts", href: "/alerts", icon: AlertTriangle },
     { name: "Community", href: "/community", icon: Users },
     { name: "FloodPredict", href: "/FloodPredict", icon: Users },
+    { name: "LocationPredict", href: "/LocationPredict", icon: Users},
   ];
 
   const isActive = (path: string) => location.pathname === path;

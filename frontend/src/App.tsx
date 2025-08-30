@@ -9,6 +9,7 @@ import Alerts from "./pages/Alerts";
 import Community from "./pages/Community";
 import NotFound from "./pages/NotFound";
 import FloodPredict from "./pages/FloodPredict";
+import LocationPredict from "./pages/LocationPredict";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
           <Route path="floodpredict" element={<FloodPredict />} />
+          <Route path="LocationPredict" element={<LocationPredict />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
