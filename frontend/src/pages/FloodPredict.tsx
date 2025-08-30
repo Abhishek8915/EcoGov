@@ -19,8 +19,14 @@ export default function FloodPredict() {
         method: "POST",
         body: formData,
       });
+      console.log("hello");
       const data = await res.json();
-      setResult(data.alert);
+      // const data = await res.json();
+      if (data.alert) {
+        setResult("✅ Alert: " + data.alert);
+      } else if (data.error) {
+        setResult("❌ Error: " + data.error);
+      }
     } catch (err) {
       console.error(err);
       setResult("❌ Error in prediction");
@@ -28,13 +34,37 @@ export default function FloodPredict() {
   };
 
   return (
-    <div style={{ padding: "1rem", maxWidth: "400px", margin: "auto", border: "1px solid #ccc", borderRadius: "8px" }}>
+    <div
+      style={{
+        padding: "1rem",
+        maxWidth: "400px",
+        margin: "auto",
+        border: "1px solid #ccc",
+        borderRadius: "8px",
+      }}
+    >
       <h2 style={{ textAlign: "center" }}>Flood Detection</h2>
-      <input type="file" onChange={handleFileChange} style={{ margin: "1rem 0", width: "100%" }} />
-      <button onClick={handleUpload} style={{ width: "100%", padding: "0.5rem", backgroundColor: "#007bff", color: "white", border: "none", borderRadius: "4px" }}>
+      <input
+        type="file"
+        onChange={handleFileChange}
+        style={{ margin: "1rem 0", width: "100%" }}
+      />
+      <button
+        onClick={handleUpload}
+        style={{
+          width: "100%",
+          padding: "0.5rem",
+          backgroundColor: "#007bff",
+          color: "white",
+          border: "none",
+          borderRadius: "4px",
+        }}
+      >
         Predict Flood
       </button>
-      <p style={{ marginTop: "1rem", textAlign: "center", fontWeight: "bold" }}>{result}</p>
+      <p style={{ marginTop: "1rem", textAlign: "center", fontWeight: "bold" }}>
+        {result}
+      </p>
     </div>
   );
 }
