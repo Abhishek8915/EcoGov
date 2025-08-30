@@ -71,7 +71,7 @@ const HeroSection = () => {
             </Link>
             
             <Link to="/alerts">
-              <Button variant="wave" size="lg">
+              <Button variant="hero" size="lg" className="float-animation">
                 <AlertTriangle className="h-5 w-5 mr-2" />
                 Check Active Alerts
               </Button>
