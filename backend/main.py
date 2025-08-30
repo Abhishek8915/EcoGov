@@ -107,3 +107,35 @@ async def location_predict(
         return JSONResponse(result)
     except Exception as e:
         return JSONResponse({"error": str(e)})
+
+
+# main.py (add near other imports)
+from spill_model import detect_spill_heuristic  # new
+
+# ... keep existing routes ...
+
+# -------------------------
+# Spill detection (image upload)
+# -------------------------
+from fastapi import Form
+
+@app.post("/detect/spill")
+async def detect_spill(
+    file: UploadFile = File(...),
+    mode: str = Form("heuristic")  # "heuristic" now, "cnn" later
+):
+    try:
+        contents = await file.read()
+        from PIL import Image
+        import io
+        image = Image.open(io.BytesIO(contents)).convert("RGB")
+
+        if mode == "heuristic":
+            result = detect_spill_heuristic(image)
+        else:
+            # placeholder—switch to CNN when ready
+            result = detect_spill_heuristic(image)
+
+        return JSONResponse(result)
+    except Exception as e:
+        return JSONResponse({"error": str(e)})

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { Waves, AlertTriangle, Map, Users, Home, Menu, X } from "lucide-react";
@@ -7,6 +7,7 @@ import { Waves, AlertTriangle, Map, Users, Home, Menu, X } from "lucide-react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const { toast } = useToast();
 
   const handleReportIssue = () => {
@@ -36,7 +37,8 @@ const Header = () => {
     { name: "Alerts", href: "/alerts", icon: AlertTriangle },
     { name: "Community", href: "/community", icon: Users },
     { name: "FloodPredict", href: "/FloodPredict", icon: Users },
-    { name: "LocationPredict", href: "/LocationPredict", icon: Users},
+    { name: "MDP", href: "/MDP", icon: Users},
+    { name: "SpillDetect", href: "/SpillDetect", icon: Users },
   ];
 
   const isActive = (path: string) => location.pathname === path;
