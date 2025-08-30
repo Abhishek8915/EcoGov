@@ -1,0 +1,21 @@
+# Backend framework
+fastapi
+uvicorn
+
+# Data processing
+numpy
+pandas
+
+# Machine Learning
+scikit-learn
+xgboost
+joblib
+
+# For handling HTTP and CORS
+requests
+python-multipart
+aiofiles
+pydantic
+
+# Optional but useful
+matplotlib   # if you plan to visualize or debug
