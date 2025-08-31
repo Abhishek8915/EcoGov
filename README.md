@@ -236,6 +236,32 @@ cd ../frontend
 npm run dev
 
 ---
+## Configuration
+
+**Frontend Configuration**
+The frontend uses Vite for fast development and building. Key configuration files:
+
+-vite.config.js - Build configuration
+
+-tailwind.config.js - Styling framework
+
+-eslint.config.js - Code linting rules
+
+**Backend Configuration**
+
+The backend is built with Express.js and includes:
+
+-CORS - Cross-origin resource sharing
+
+-Rate Limiting - API request throttling
+
+-Input Validation - Request data sanitization
+
+-JWT Authentication - Secure token-based auth
+
+-Error Handling - Centralized error management
+
+---
 
 ##  Models Implemented
 ### 1.  Flood Detection (Deep Learning)
