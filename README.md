@@ -142,6 +142,102 @@ GitHub Actions – CI/CD pipelines for automated deployments
 dotenv – Manage sensitive keys like Twilio credentials securely
 
 ---
+## Folder Structure
+
+EcoGov/
+├── backend/                       # FastAPI backend
+│   ├── main.py                     # Entry point
+│   ├── model.py                    # Flood prediction & location models
+│   ├── routes/                     # API routes
+│   │   ├── flood.py
+│   │   ├── location.py
+│   │   └── alert.py                # Twilio SMS alerts
+│   ├── utils/                      # Helper functions
+│   └── config/                     # Environment & settings
+├── client/                         # React frontend
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── AlertButton.jsx
+│   │   │   └── DashboardCard.jsx
+│   │   ├── pages/
+│   │   │   ├── Home.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   └── Reports.jsx
+│   │   ├── contexts/               # React contexts
+│   │   └── assets/                 # Static resources
+│   ├── package.json
+│   └── vite.config.js
+├── data/                            # Datasets (images, CSV, etc.)
+├── docs/                            # Documentation & screenshots
+├── .env                             # Environment variables
+├── requirements.txt                 # Python dependencies
+└── README.md                        # Project documentation
+
+---
+
+## Getting Started
+**Prerequisites**
+
+Before you begin, ensure you have the following installed:
+Python 3.12 or higher
+Node.js (v18 or higher) 
+npm or yarn – Package manager
+Git – Version control
+MongoDB – Database (local or Atlas)
+Twilio Account – For SMS alert integration
+
+**Installation**
+1. Clone the Repository
+git clone https://github.com/Abhishek8915/EcoGov.git
+cd EcoGov
+
+2. Install Dependencies
+Backend (FastAPI) dependencies:
+
+cd backend
+pip install -r requirements.txt
+
+Frontend (React) dependencies:
+
+cd ../frontend
+npm install
+
+Note: If using any ML models or PyTorch, ensure CUDA or CPU dependencies are installed as needed.
+
+3. Environment Setup
+
+Backend Environment (backend/.env):
+
+PORT=8000
+MONGODB_URI=mongodb://localhost:27017/ecogov
+
+Frontend Environment (client/.env):
+
+VITE_API_URL=http://localhost:8000
+
+4. Database Setup
+
+Local MongoDB:
+
+mongod
+
+MongoDB Atlas:
+Update MONGODB_URI in backend/.env with your Atlas connection string.
+
+5. Start Development Servers
+
+Backend (FastAPI / Uvicorn):
+
+cd backend
+uvicorn main:app --reload
+
+Frontend (React / Vite):
+
+cd ../client
+npm run dev
 
 ---
 
