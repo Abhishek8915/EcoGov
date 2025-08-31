@@ -45,37 +45,49 @@ A comprehensive **AI/ML-powered early warning and monitoring platform** that:
 **Flood Prediction & Monitoring**
 
 Upload images of coastal areas to receive predictive flood masks
+
 Machine learning model generates alert levels for timely decision-making
+
 Supports multiple image formats for flexibility
 
 **Location-Based Risk Assessment**
 
 Input latitude and longitude to assess flood risk for specific areas
+
 Real-time location-based alerts
+
 Helps NGOs and local authorities plan preventive actions
 
 **Emergency Alert System**
 
 Instantly send SMS alerts to residents and authorities in coastal areas
+
 Powered by Twilio for reliable communication
+
 Customizable alert messages for different scenarios
 
 **Intuitive Frontend Interface**
 
 Built with React and Tailwind CSS for user-friendly navigation
+
 Responsive design for desktop and mobile use
+
 Dashboard view for easy monitoring of alerts and predictions
 
 **Analytics & Reporting**
 
 Visualize flood predictions and mask outputs
+
 Track historical alerts and location-based risk trends
+
 Provides insights to improve future flood preparedness
 
 **Role-Based Access**
 
 NGO Coordinators: send alerts, upload images, and monitor risk
+
 Coastal Community Users: receive SMS alerts and updates
+
 Admin Dashboard: manage users, alerts, and system settings
 
 ---
@@ -85,32 +97,47 @@ Admin Dashboard: manage users, alerts, and system settings
 **Frontend**
 
 React 19.1.1 – Latest React with concurrent features
+
 TailwindCSS 4 – Utility-first CSS framework for responsive design
+
 Framer Motion – Smooth and production-ready animations
+
 React Router – Client-side routing for multi-page navigation
+
 Recharts – Data visualization for flood predictions and alerts
+
 Lucide Icons – Clean and modern iconography
 
 **Backend**
 
 Python 3.12 / FastAPI – High-performance server framework
+
 Uvicorn – ASGI server for running FastAPI
+
 PyTorch – Machine learning library for flood prediction models
+
 Pillow (PIL) – Image processing for flood mask generation
+
 Twilio – SMS alert service for emergency notifications
+
 python-dotenv – Environment variable management
+
 CORS Middleware – Enable frontend-backend communication
 
 **Database**
 
 MongoDB – Storing user data, alerts, and predictions
+
 PyMongo / SQLAlchemy – Database interaction libraries
 
 **DevOps & Deployment**
 
 Railway / Render – Backend deployment and hosting
+
 Vercel – Frontend deployment
+
 GitHub Actions – CI/CD pipelines for automated deployments
+
 dotenv – Manage sensitive keys like Twilio credentials securely
 
 ---
@@ -124,11 +151,17 @@ dotenv – Manage sensitive keys like Twilio credentials securely
 **Prerequisites**
 
 Before you begin, ensure you have the following installed:
+
 Python 3.12 or higher
+
 Node.js (v18 or higher) 
+
 npm or yarn – Package manager
+
 Git – Version control
+
 MongoDB – Database (local or Atlas)
+
 Twilio Account – For SMS alert integration
 
 **Installation**
