@@ -1,5 +1,4 @@
 # 🌊 Coastal Threat Alert System
-**Team: TechTonic**
 
 ---
 
@@ -22,11 +21,11 @@ A comprehensive **AI/ML-powered early warning and monitoring platform** that:
 ---
 
 ##  Impact
-Environmental: Enhances disaster preparedness and mitigates the environmental impact of coastal floods by enabling timely interventions.
+**Environmental**: Enhances disaster preparedness and mitigates the environmental impact of coastal floods by enabling timely interventions.
 
-Economic: Reduces potential economic losses for coastal communities and local businesses by providing early warnings and actionable flood data.
+**Economic**: Reduces potential economic losses for coastal communities and local businesses by providing early warnings and actionable flood data.
 
-Social: Strengthens community resilience and safety by enabling NGOs, authorities, and residents to respond quickly to flood threats, fostering trust and collaboration.
+**Social**: Strengthens community resilience and safety by enabling NGOs, authorities, and residents to respond quickly to flood threats, fostering trust and collaboration.
 
 ---
 
@@ -44,51 +43,34 @@ Social: Strengthens community resilience and safety by enabling NGOs, authoritie
 ## Features
 
 **Flood Prediction & Monitoring**
-
 Upload images of coastal areas to receive predictive flood masks
-
 Machine learning model generates alert levels for timely decision-making
-
 Supports multiple image formats for flexibility
 
 **Location-Based Risk Assessment**
-
 Input latitude and longitude to assess flood risk for specific areas
-
 Real-time location-based alerts
-
 Helps NGOs and local authorities plan preventive actions
 
-📱 Emergency Alert System
-
+**Emergency Alert System**
 Instantly send SMS alerts to residents and authorities in coastal areas
-
 Powered by Twilio for reliable communication
-
 Customizable alert messages for different scenarios
 
 **Intuitive Frontend Interface**
-
 Built with React and Tailwind CSS for user-friendly navigation
-
 Responsive design for desktop and mobile use
-
 Dashboard view for easy monitoring of alerts and predictions
 
 **Analytics & Reporting**
-
 Visualize flood predictions and mask outputs
-
 Track historical alerts and location-based risk trends
-
 Provides insights to improve future flood preparedness
 
 **Role-Based Access**
 
 NGO Coordinators: send alerts, upload images, and monitor risk
-
 Coastal Community Users: receive SMS alerts and updates
-
 Admin Dashboard: manage users, alerts, and system settings
 
 ---
@@ -96,49 +78,30 @@ Admin Dashboard: manage users, alerts, and system settings
 ## Tech Stack
 
 **Frontend**
-
 React 19.1.1 – Latest React with concurrent features
-
 TailwindCSS 4 – Utility-first CSS framework for responsive design
-
 Framer Motion – Smooth and production-ready animations
-
 React Router – Client-side routing for multi-page navigation
-
 Recharts – Data visualization for flood predictions and alerts
-
 Lucide Icons – Clean and modern iconography
 
 **Backend**
-
 Python 3.12 / FastAPI – High-performance server framework
-
 Uvicorn – ASGI server for running FastAPI
-
 PyTorch – Machine learning library for flood prediction models
-
 Pillow (PIL) – Image processing for flood mask generation
-
 Twilio – SMS alert service for emergency notifications
-
 python-dotenv – Environment variable management
-
 CORS Middleware – Enable frontend-backend communication
 
 **Database**
-
 MongoDB – Storing user data, alerts, and predictions
-
 PyMongo / SQLAlchemy – Database interaction libraries
 
 **DevOps & Deployment**
-
 Railway / Render – Backend deployment and hosting
-
 Vercel – Frontend deployment
-
 GitHub Actions – CI/CD pipelines for automated deployments
-
 dotenv – Manage sensitive keys like Twilio credentials securely
 
 ---
@@ -191,17 +154,15 @@ Twilio Account – For SMS alert integration
 
 **Installation**
 1. Clone the Repository
-git clone https://github.com/Abhishek8915/EcoGov.git
-cd EcoGov
+   git clone https://github.com/Abhishek8915/EcoGov.git
+   cd EcoGov
 
 2. Install Dependencies
-Backend (FastAPI) dependencies:
-
-cd backend
-pip install -r requirements.txt
+   Backend (FastAPI) dependencies:
+   cd backend
+   pip install -r requirements.txt
 
 Frontend (React) dependencies:
-
 cd ../frontend
 npm install
 
@@ -215,28 +176,23 @@ PORT=8000
 MONGODB_URI=mongodb://localhost:27017/ecogov
 
 Frontend Environment (client/.env):
-
 VITE_API_URL=http://localhost:8000
 
 4. Database Setup
 
 Local MongoDB:
-
 mongod
-
 MongoDB Atlas:
 Update MONGODB_URI in backend/.env with your Atlas connection string.
 
 5. Start Development Servers
 
 Backend (FastAPI / Uvicorn):
-
 cd backend
 uvicorn main:app --reload
 
 Frontend (React / Vite):
-
-cd ../client
+cd ../frontend
 npm run dev
 
 ---
