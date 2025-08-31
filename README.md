@@ -143,7 +143,40 @@ dotenv – Manage sensitive keys like Twilio credentials securely
 ---
 ## Folder Structure
 
-<img width="595" height="712" alt="image" src="https://github.com/user-attachments/assets/4a064ae7-6d4c-4a00-9963-7c7e36f5c0b1" />
+```
+EcoGov/
+├── backend/                       # FastAPI backend
+│   ├── main.py                     # Entry point
+│   ├── model.py                    # Flood prediction & location models
+│   ├── routes/                     # API routes
+│   │   ├── flood.py
+│   │   ├── location.py
+│   │   └── alert.py                # Twilio SMS alerts
+│   ├── utils/                      # Helper functions
+│   └── config/                     # Environment & settings
+├── client/                         # React frontend
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── AlertButton.jsx
+│   │   │   └── DashboardCard.jsx
+│   │   ├── pages/
+│   │   │   ├── Home.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   └── Reports.jsx
+│   │   ├── contexts/               # React contexts
+│   │   └── assets/                 # Static resources
+│   ├── package.json
+│   └── vite.config.js
+├── data/                            # Datasets (images, CSV, etc.)
+├── docs/                            # Documentation & screenshots
+├── .env                             # Environment variables
+├── requirements.txt                 # Python dependencies
+└── README.md                        # Project documentation
+
+```
 
 ---
 
