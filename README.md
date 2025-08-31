@@ -198,23 +198,29 @@ MongoDB – Database (local or Atlas)
 Twilio Account – For SMS alert integration
 
 **Installation**
-1. Clone the Repository
+**1. Clone the Repository**
+   
    git clone https://github.com/Abhishek8915/EcoGov.git
+   
    cd EcoGov
 
-2. Install Dependencies
+**2. Install Dependencies**
+   
    Backend (FastAPI) dependencies:
+   
    cd backend
+   
    pip install -r requirements.txt
 
 Frontend (React) dependencies:
 
 cd ../frontend
+
 npm install
 
 Note: If using any ML models or PyTorch, ensure CUDA or CPU dependencies are installed as needed.
 
-3. Environment Setup
+**3. Environment Setup**
 
 Backend Environment (backend/.env):
 
@@ -224,14 +230,14 @@ MONGODB_URI=mongodb://localhost:27017/ecogov
 Frontend Environment (client/.env):
 VITE_API_URL=http://localhost:8000
 
-4. Database Setup
+**4. Database Setup**
 
 Local MongoDB:
 mongod
 MongoDB Atlas:
 Update MONGODB_URI in backend/.env with your Atlas connection string.
 
-5. Start Development Servers
+**5. Start Development Servers**
 
 Backend (FastAPI / Uvicorn):
 cd backend
@@ -290,18 +296,6 @@ npm run dev
 - **SAR-based deep learning** with Sentinel-1 data.  
 - Offline-first **mobile app** for alerts & feedback.  
 - Fisherfolk wearable IoT devices for **cyclone & theft alerts**.  
-
----
-
-##  Repository Structure
-├── models/ # ML/DL models (Flood detection, Mangrove classifier)
-├── backend/ # APIs (FastAPI + DB)
-├── frontend/ # React dashboard + visualizations
-├── data/ # Sample datasets & preprocessing scripts
-├── notebooks/ # Jupyter notebooks (training & experiments)
-├── docs/ # Diagrams, workflows, architecture docs
-└── README.md # Project overview (this file)
-
 
 ---
 
