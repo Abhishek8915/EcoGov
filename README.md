@@ -30,13 +30,13 @@ A comprehensive **AI/ML-powered early warning and monitoring platform** that:
 ---
 
 ##  Key Innovations (USP)
-**-Deep Learning Flood Detection** – Real-time flood level estimation with masked imagery.  
-**-Mangrove Density Prediction** – Predicts presence/absence of mangroves using 7 features (lat, long, elevation, climate data, etc.).  
-**-Multi-Source Data Fusion** – Satellites + sensors + API-based weather/tide info.  
-**-Explainable AI Alerts** – Each alert comes with drivers & confidence levels.  
-**-Peer-to-Peer Alerts** – Works even in low/no internet zones.  
-**-Community Participation** – Reporting module with crowdsourced validation & gamification.  
-**-Blue Carbon Ecosystem Protection** – Dedicated monitoring module for mangroves, salt marshes & seagrass.  
+**->Deep Learning Flood Detection** – Real-time flood level estimation with masked imagery.  
+**->Mangrove Density Prediction** – Predicts presence/absence of mangroves using 7 features (lat, long, elevation, climate data, etc.).  
+**->Multi-Source Data Fusion** – Satellites + sensors + API-based weather/tide info.  
+**->Explainable AI Alerts** – Each alert comes with drivers & confidence levels.  
+**-?Peer-to-Peer Alerts** – Works even in low/no internet zones.  
+**->Community Participation** – Reporting module with crowdsourced validation & gamification.  
+**->Blue Carbon Ecosystem Protection** – Dedicated monitoring module for mangroves, salt marshes & seagrass.  
 
 ---
 
