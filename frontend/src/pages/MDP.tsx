@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { MapContainer, TileLayer, CircleMarker, Popup, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import Footer from "@/components/Footer";
 import axios from "axios";
 import Header from "@/components/Header";
 

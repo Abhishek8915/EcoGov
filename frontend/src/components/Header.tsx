@@ -38,7 +38,7 @@ const Header = () => {
     { name: "Community", href: "/community", icon: Users },
     { name: "FloodPredict", href: "/FloodPredict", icon: Users },
     { name: "MDP", href: "/MDP", icon: Users},
-    { name: "SpillDetect", href: "/SpillDetect", icon: Users },
+    
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -57,7 +57,7 @@ const Header = () => {
             </div>
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold gradient-ocean bg-clip-text text-transparent">
-                Coastal Watch Pro
+                EcoGov
               </h1>
               <p className="text-xs text-muted-foreground">Threat Alert System</p>
             </div>

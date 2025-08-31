@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Footer from "@/components/Footer";
 import { Textarea } from "@/components/ui/textarea";
 import { 
   Users, 
@@ -421,6 +422,7 @@ const Community = () => {
           </div>
         )}
       </main>
+      <Footer/>
     </div>
   );
 };
