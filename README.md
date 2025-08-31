@@ -43,26 +43,31 @@ A comprehensive **AI/ML-powered early warning and monitoring platform** that:
 ## Features
 
 **Flood Prediction & Monitoring**
+
 Upload images of coastal areas to receive predictive flood masks
 Machine learning model generates alert levels for timely decision-making
 Supports multiple image formats for flexibility
 
 **Location-Based Risk Assessment**
+
 Input latitude and longitude to assess flood risk for specific areas
 Real-time location-based alerts
 Helps NGOs and local authorities plan preventive actions
 
 **Emergency Alert System**
+
 Instantly send SMS alerts to residents and authorities in coastal areas
 Powered by Twilio for reliable communication
 Customizable alert messages for different scenarios
 
 **Intuitive Frontend Interface**
+
 Built with React and Tailwind CSS for user-friendly navigation
 Responsive design for desktop and mobile use
 Dashboard view for easy monitoring of alerts and predictions
 
 **Analytics & Reporting**
+
 Visualize flood predictions and mask outputs
 Track historical alerts and location-based risk trends
 Provides insights to improve future flood preparedness
@@ -78,6 +83,7 @@ Admin Dashboard: manage users, alerts, and system settings
 ## Tech Stack
 
 **Frontend**
+
 React 19.1.1 – Latest React with concurrent features
 TailwindCSS 4 – Utility-first CSS framework for responsive design
 Framer Motion – Smooth and production-ready animations
@@ -86,6 +92,7 @@ Recharts – Data visualization for flood predictions and alerts
 Lucide Icons – Clean and modern iconography
 
 **Backend**
+
 Python 3.12 / FastAPI – High-performance server framework
 Uvicorn – ASGI server for running FastAPI
 PyTorch – Machine learning library for flood prediction models
@@ -95,10 +102,12 @@ python-dotenv – Environment variable management
 CORS Middleware – Enable frontend-backend communication
 
 **Database**
+
 MongoDB – Storing user data, alerts, and predictions
 PyMongo / SQLAlchemy – Database interaction libraries
 
 **DevOps & Deployment**
+
 Railway / Render – Backend deployment and hosting
 Vercel – Frontend deployment
 GitHub Actions – CI/CD pipelines for automated deployments
@@ -107,37 +116,7 @@ dotenv – Manage sensitive keys like Twilio credentials securely
 ---
 ## Folder Structure
 
-EcoGov/
-├── backend/                       # FastAPI backend
-│   ├── main.py                     # Entry point
-│   ├── model.py                    # Flood prediction & location models
-│   ├── routes/                     # API routes
-│   │   ├── flood.py
-│   │   ├── location.py
-│   │   └── alert.py                # Twilio SMS alerts
-│   ├── utils/                      # Helper functions
-│   └── config/                     # Environment & settings
-├── client/                         # React frontend
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Footer.jsx
-│   │   │   ├── AlertButton.jsx
-│   │   │   └── DashboardCard.jsx
-│   │   ├── pages/
-│   │   │   ├── Home.jsx
-│   │   │   ├── Login.jsx
-│   │   │   ├── Dashboard.jsx
-│   │   │   └── Reports.jsx
-│   │   ├── contexts/               # React contexts
-│   │   └── assets/                 # Static resources
-│   ├── package.json
-│   └── vite.config.js
-├── data/                            # Datasets (images, CSV, etc.)
-├── docs/                            # Documentation & screenshots
-├── .env                             # Environment variables
-├── requirements.txt                 # Python dependencies
-└── README.md                        # Project documentation
+<img width="595" height="712" alt="image" src="https://github.com/user-attachments/assets/4a064ae7-6d4c-4a00-9963-7c7e36f5c0b1" />
 
 ---
 
@@ -163,6 +142,7 @@ Twilio Account – For SMS alert integration
    pip install -r requirements.txt
 
 Frontend (React) dependencies:
+
 cd ../frontend
 npm install
 
