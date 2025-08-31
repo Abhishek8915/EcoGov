@@ -21,12 +21,12 @@ A comprehensive **AI/ML-powered early warning and monitoring platform** that:
 
 ---
 
-##  Target Users
-- Disaster Management Departments  
-- Coastal City Governments & Urban Planners  
-- Environmental NGOs  
-- Fisherfolk & Local Communities  
-- Civil Defence & Response Teams  
+##  Impact
+Environmental: Enhances disaster preparedness and mitigates the environmental impact of coastal floods by enabling timely interventions.
+
+Economic: Reduces potential economic losses for coastal communities and local businesses by providing early warnings and actionable flood data.
+
+Social: Strengthens community resilience and safety by enabling NGOs, authorities, and residents to respond quickly to flood threats, fostering trust and collaboration.
 
 ---
 
@@ -41,32 +41,107 @@ A comprehensive **AI/ML-powered early warning and monitoring platform** that:
 
 ---
 
-##  System Workflow
-**Data-to-Action Pipeline**
+## Features
 
-Data Ingestion ➝ AI/ML Anomaly Detection ➝ Predictive Forecasting
-➝ Role-based Alert Dissemination ➝ Community Feedback
-➝ Model Refinement
+**Flood Prediction & Monitoring**
 
+Upload images of coastal areas to receive predictive flood masks
 
-### Components
-1. **Data Ingestion Layer** – Satellite data (Sentinel), weather APIs, tide gauges, IoT sensors.  
-2. **Processing & AI Models**
-   - Flood Detection (DL segmentation model).  
-   - Mangrove Classifier (Geospatial ML).  
-   - Time-Series Forecasting (Prophet).  
-3. **Backend APIs** – FastAPI + NoSQL (MongoDB/Firebase).  
-4. **Visualization Layer** – React UI with **Leaflet maps & D3.js charts**.  
-5. **Alerting & Reporting** – Firebase, Twilio, P2P communication.  
+Machine learning model generates alert levels for timely decision-making
+
+Supports multiple image formats for flexibility
+
+**Location-Based Risk Assessment**
+
+Input latitude and longitude to assess flood risk for specific areas
+
+Real-time location-based alerts
+
+Helps NGOs and local authorities plan preventive actions
+
+📱 Emergency Alert System
+
+Instantly send SMS alerts to residents and authorities in coastal areas
+
+Powered by Twilio for reliable communication
+
+Customizable alert messages for different scenarios
+
+**Intuitive Frontend Interface**
+
+Built with React and Tailwind CSS for user-friendly navigation
+
+Responsive design for desktop and mobile use
+
+Dashboard view for easy monitoring of alerts and predictions
+
+**Analytics & Reporting**
+
+Visualize flood predictions and mask outputs
+
+Track historical alerts and location-based risk trends
+
+Provides insights to improve future flood preparedness
+
+**Role-Based Access**
+
+NGO Coordinators: send alerts, upload images, and monitor risk
+
+Coastal Community Users: receive SMS alerts and updates
+
+Admin Dashboard: manage users, alerts, and system settings
 
 ---
 
-##  Tech Stack
-- **Data** → Sentinel-2, Tide gauges, Weather APIs, IoT Sensors  
-- **AI/ML** → TensorFlow, PyTorch, Prophet (forecasting)  
-- **Backend** → Python (FastAPI/Flask), MongoDB/Firebase  
-- **Frontend** → React, Leaflet / Mapbox, D3.js  
-- **Alerts** → Firebase Cloud Messaging, Twilio SMS Gateway  
+## Tech Stack
+
+**Frontend**
+
+React 19.1.1 – Latest React with concurrent features
+
+TailwindCSS 4 – Utility-first CSS framework for responsive design
+
+Framer Motion – Smooth and production-ready animations
+
+React Router – Client-side routing for multi-page navigation
+
+Recharts – Data visualization for flood predictions and alerts
+
+Lucide Icons – Clean and modern iconography
+
+**Backend**
+
+Python 3.12 / FastAPI – High-performance server framework
+
+Uvicorn – ASGI server for running FastAPI
+
+PyTorch – Machine learning library for flood prediction models
+
+Pillow (PIL) – Image processing for flood mask generation
+
+Twilio – SMS alert service for emergency notifications
+
+python-dotenv – Environment variable management
+
+CORS Middleware – Enable frontend-backend communication
+
+**Database**
+
+MongoDB – Storing user data, alerts, and predictions
+
+PyMongo / SQLAlchemy – Database interaction libraries
+
+**DevOps & Deployment**
+
+Railway / Render – Backend deployment and hosting
+
+Vercel – Frontend deployment
+
+GitHub Actions – CI/CD pipelines for automated deployments
+
+dotenv – Manage sensitive keys like Twilio credentials securely
+
+---
 
 ---
 
