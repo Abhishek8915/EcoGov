@@ -44,57 +44,57 @@ A comprehensive **AI/ML-powered early warning and monitoring platform** that:
 
 **Flood Prediction & Monitoring**
 
-Upload images of coastal areas to receive predictive flood masks
+-Upload images of coastal areas to receive predictive flood masks
 
-Machine learning model generates alert levels for timely decision-making
+-Machine learning model generates alert levels for timely decision-making
 
-Supports multiple image formats for flexibility
+-Supports multiple image formats for flexibility
 
 **Location-Based Risk Assessment**
 
-Input latitude and longitude to assess flood risk for specific areas
+-Input latitude and longitude to assess flood risk for specific areas
 
-Real-time location-based alerts
+-Real-time location-based alerts
 
-Helps NGOs and local authorities plan preventive actions
+-Helps NGOs and local authorities plan preventive actions
 
 **Emergency Alert System**
 
-Instantly send SMS alerts to residents and authorities in coastal areas
+-Instantly send SMS alerts to residents and authorities in coastal areas
 
-Powered by Twilio for reliable communication
+-Powered by Twilio for reliable communication
 
-Customizable alert messages for different scenarios
+-Customizable alert messages for different scenarios
 
 **Intuitive Frontend Interface**
 
-Built with React and Tailwind CSS for user-friendly navigation
+-Built with React and Tailwind CSS for user-friendly navigation
 
-Responsive design for desktop and mobile use
+-Responsive design for desktop and mobile use
 
-Dashboard view for easy monitoring of alerts and predictions
+-Dashboard view for easy monitoring of alerts and predictions
 
 **Analytics & Reporting**
 
-Visualize flood predictions and mask outputs
+-Visualize flood predictions and mask outputs
 
-Track historical alerts and location-based risk trends
+-Track historical alerts and location-based risk trends
 
-Provides insights to improve future flood preparedness
+-Provides insights to improve future flood preparedness
 
 **Role-Based Access**
 
-NGO Coordinators: send alerts, upload images, and monitor risk
+-NGO Coordinators: send alerts, upload images, and monitor risk
 
-Coastal Community Users: receive SMS alerts and updates
+-Coastal Community Users: receive SMS alerts and updates
 
-Admin Dashboard: manage users, alerts, and system settings
+-Admin Dashboard: manage users, alerts, and system settings
 
 ---
 
 ## Tech Stack
 
-**Frontend**
+**->Frontend**
 
 React 19.1.1 – Latest React with concurrent features
 
@@ -108,7 +108,7 @@ Recharts – Data visualization for flood predictions and alerts
 
 Lucide Icons – Clean and modern iconography
 
-**Backend**
+**->Backend**
 
 Python 3.12 / FastAPI – High-performance server framework
 
@@ -124,7 +124,7 @@ python-dotenv – Environment variable management
 
 CORS Middleware – Enable frontend-backend communication
 
-**Database**
+**->Database**
 
 MongoDB – Storing user data, alerts, and predictions
 
@@ -147,27 +147,15 @@ dotenv – Manage sensitive keys like Twilio credentials securely
 EcoGov/
 ├── backend/                       # FastAPI backend
 │   ├── main.py                     # Entry point
-│   ├── model.py                    # Flood prediction & location models
-│   ├── routes/                     # API routes
-│   │   ├── flood.py
-│   │   ├── location.py
-│   │   └── alert.py                # Twilio SMS alerts
-│   ├── utils/                      # Helper functions
-│   └── config/                     # Environment & settings
-├── client/                         # React frontend
+│   ├── model.py                    # Flood prediction & location models                
+│   └── utils.py                     # Environment & settings
+├── frontend/                         # React frontend
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Footer.jsx
-│   │   │   ├── AlertButton.jsx
-│   │   │   └── DashboardCard.jsx
 │   │   ├── pages/
-│   │   │   ├── Home.jsx
-│   │   │   ├── Login.jsx
-│   │   │   ├── Dashboard.jsx
-│   │   │   └── Reports.jsx
-│   │   ├── contexts/               # React contexts
-│   │   └── assets/                 # Static resources
+│   │   ├── hooks/               # React contexts
+│   │   └── assets/
+|   |   └── assets/               # Static resources
 │   ├── package.json
 │   └── vite.config.js
 ├── data/                            # Datasets (images, CSV, etc.)
