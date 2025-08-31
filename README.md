@@ -3,14 +3,8 @@
 
 ---
 
-## Problem Statement
-Coastal regions are increasingly vulnerable to **storm surges, flooding, erosion, and pollution** that damage communities and **blue carbon ecosystems** (mangroves, salt marshes, seagrasses).  
-The loss of these habitats worsens **flood risks, biodiversity decline, and reduces carbon storage** critical for climate regulation.  
-
-Existing systems are:  
-- Siloed and fragmented.  
-- Slow in threat detection.  
-- Not accessible to local communities.  
+## Overview
+EcoGov is a full-stack coastal flood alert platform that enables end-to-end management of flood monitoring and emergency response. It empowers NGOs, local authorities, and coastal communities to seamlessly participate in a secure, real-time, and automated ecosystem. By combining machine learning-based flood predictions, location-specific risk assessments, and instant SMS alerts, EcoGov ensures timely action and enhances community resilience against coastal floods.
 
 **Timely detection and role-based alerts can save lives, property, and ecosystems.**
 
